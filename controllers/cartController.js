@@ -40,7 +40,7 @@ exports.getCartProducts = catchAsync(async (req, res, next) => {
   const userID = req.user._id;
   console.log(userID, req.user);
   const cart = await Cart.findOne({ userID }).populate("items.productID");
-
+  //chnage the comment
   if (!cart) {
     return next(new AppError("Cart is empty", 200));
   }
